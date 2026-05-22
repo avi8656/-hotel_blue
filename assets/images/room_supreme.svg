@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D224E" />
+      <stop offset="100%" stop-color="#19122F" />
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#473A2B" />
+      <stop offset="100%" stop-color="#271E14" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DFCDA6" />
+      <stop offset="50%" stop-color="#C5A880" />
+      <stop offset="100%" stop-color="#AC8D60" />
+    </linearGradient>
+    <linearGradient id="sheetGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FAF9F6" />
+      <stop offset="100%" stop-color="#E5E7EB" />
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Wall Background -->
+  <rect width="100%" height="380" fill="url(#wallGrad)" />
+  
+  <!-- Floor Background -->
+  <rect y="380" width="100%" height="120" fill="url(#floorGrad)" />
+
+  <!-- Carpet under bed -->
+  <ellipse cx="400" cy="420" rx="250" ry="40" fill="#4F3F84" opacity="0.35" />
+
+  <!-- Accent Wall Art (Gold Geometric Frames) -->
+  <rect x="250" y="60" width="100" height="120" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" opacity="0.7"/>
+  <line x1="250" y1="120" x2="350" y2="120" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="300" cy="120" r="25" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.8"/>
+  
+  <rect x="450" y="60" width="100" height="120" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" opacity="0.7"/>
+  <line x1="450" y1="120" x2="550" y2="120" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="500,95 525,135 475,135" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.8"/>
+
+  <!-- Bed Headboard -->
+  <rect x="220" y="160" width="360" height="100" fill="#3D3066" rx="8" stroke="url(#goldGrad)" stroke-width="2" />
+  <!-- Vertical tufts on headboard -->
+  <line x1="280" y1="160" x2="280" y2="260" stroke="#251C42" stroke-width="1.5"/>
+  <line x1="340" y1="160" x2="340" y2="260" stroke="#251C42" stroke-width="1.5"/>
+  <line x1="400" y1="160" x2="400" y2="260" stroke="#251C42" stroke-width="1.5"/>
+  <line x1="460" y1="160" x2="460" y2="260" stroke="#251C42" stroke-width="1.5"/>
+  <line x1="520" y1="160" x2="520" y2="260" stroke="#251C42" stroke-width="1.5"/>
+
+  <!-- Pillows -->
+  <rect x="250" y="225" width="120" height="50" fill="#FAF9F6" rx="6" />
+  <rect x="430" y="225" width="120" height="50" fill="#FAF9F6" rx="6" />
+  
+  <!-- Accent Wisteria Pillows (Overlay) -->
+  <rect x="280" y="240" width="80" height="35" fill="#4F3F84" rx="4" opacity="0.9" />
+  <rect x="440" y="240" width="80" height="35" fill="#4F3F84" rx="4" opacity="0.9" />
+
+  <!-- Bed Mattress / Duvet -->
+  <rect x="210" y="270" width="380" height="120" fill="url(#sheetGrad)" rx="8" />
+  
+  <!-- Duvet folded top sheet -->
+  <path d="M 210 285 L 590 285 L 590 310 L 210 310 Z" fill="#E5E7EB" />
+  
+  <!-- Wisteria color Bed Runner across the bottom -->
+  <rect x="210" y="340" width="380" height="40" fill="#4F3F84" />
+  <rect x="210" y="340" width="380" height="5" fill="url(#goldGrad)" />
+  
+  <!-- Nightstands -->
+  <!-- Left Nightstand -->
+  <rect x="130" y="260" width="60" height="120" fill="#1F1A3A" rx="4" stroke="#C5A880" stroke-width="1"/>
+  <circle cx="160" cy="285" r="4" fill="#C5A880" />
+  <circle cx="160" cy="330" r="4" fill="#C5A880" />
+  <!-- Nightstand Lamp Left -->
+  <path d="M 145 260 L 175 260 L 185 220 L 135 220 Z" fill="#C5A880" />
+  <line x1="160" y1="260" x2="160" y2="220" stroke="url(#goldGrad)" stroke-width="3"/>
+  <polygon points="160,220 130,170 190,170" fill="#FFEAA7" opacity="0.6" filter="url(#softGlow)" />
+
+  <!-- Right Nightstand -->
+  <rect x="610" y="260" width="60" height="120" fill="#1F1A3A" rx="4" stroke="#C5A880" stroke-width="1"/>
+  <circle cx="640" cy="285" r="4" fill="#C5A880" />
+  <circle cx="640" cy="330" r="4" fill="#C5A880" />
+  <!-- Nightstand Lamp Right -->
+  <path d="M 625 260 L 655 260 L 665 220 L 615 220 Z" fill="#C5A880" />
+  <line x1="640" y1="260" x2="640" y2="220" stroke="url(#goldGrad)" stroke-width="3"/>
+  <polygon points="640,220 610,170 670,170" fill="#FFEAA7" opacity="0.6" filter="url(#softGlow)" />
+
+  <!-- Room Name Overlay -->
+  <rect x="280" y="430" width="240" height="40" fill="#0F172A" rx="20" opacity="0.8" stroke="url(#goldGrad)" stroke-width="2" />
+  <text x="400" y="455" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#DFCDA6" font-weight="700" letter-spacing="1" text-anchor="middle">
+    SUPREME ROOM — COZY &amp; VALUE
+  </text>
+  
+</svg>

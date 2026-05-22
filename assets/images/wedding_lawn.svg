@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F0E26" />
+      <stop offset="100%" stop-color="#2D1B4E" />
+    </linearGradient>
+    <linearGradient id="lawnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#142B1A" />
+      <stop offset="100%" stop-color="#09140B" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DFCDA6" />
+      <stop offset="50%" stop-color="#C5A880" />
+      <stop offset="100%" stop-color="#AC8D60" />
+    </linearGradient>
+    <linearGradient id="lightBeam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFEAA7" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#FFEAA7" stop-opacity="0" />
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Night Sky background -->
+  <rect width="100%" height="320" fill="url(#skyGrad)" />
+  
+  <!-- Sprawling Lawn floor -->
+  <rect y="320" width="100%" height="180" fill="url(#lawnGrad)" />
+
+  <!-- Stars in sky -->
+  <circle cx="150" cy="60" r="1.2" fill="#ffffff" opacity="0.6"/>
+  <circle cx="340" cy="80" r="1.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="580" cy="50" r="1" fill="#ffffff" opacity="0.4"/>
+  <circle cx="700" cy="110" r="1.8" fill="#ffffff" opacity="0.7"/>
+
+  <!-- Distant Trees and Palms silhouettes -->
+  <path d="M 0 320 Q 30 280 60 320 T 120 320" fill="#08140B" />
+  <path d="M 680 320 Q 720 260 760 320 T 800 320" fill="#08140B" />
+  
+  <!-- Royal Wedding Mandap / Canopy -->
+  <g id="wedding-mandap" transform="translate(250, 140)">
+    <!-- Mandap Platform -->
+    <rect x="-20" y="160" width="340" height="30" fill="#1B0F2A" rx="4" stroke="url(#goldGrad)" stroke-width="2.5"/>
+    <rect x="0" y="150" width="300" height="10" fill="url(#goldGrad)" />
+    
+    <!-- Mandap Columns -->
+    <!-- Column 1 (Left Outer) -->
+    <line x1="20" y1="20" x2="20" y2="150" stroke="url(#goldGrad)" stroke-width="6"/>
+    <line x1="20" y1="20" x2="20" y2="150" stroke="#FAF9F6" stroke-width="2" opacity="0.6"/>
+    <circle cx="20" cy="150" r="8" fill="url(#goldGrad)"/>
+    
+    <!-- Column 2 (Left Inner) -->
+    <line x1="60" y1="20" x2="60" y2="150" stroke="url(#goldGrad)" stroke-width="4"/>
+    
+    <!-- Column 3 (Right Inner) -->
+    <line x1="240" y1="20" x2="240" y2="150" stroke="url(#goldGrad)" stroke-width="4"/>
+    
+    <!-- Column 4 (Right Outer) -->
+    <line x1="280" y1="20" x2="280" y2="150" stroke="url(#goldGrad)" stroke-width="6"/>
+    <line x1="280" y1="20" x2="280" y2="150" stroke="#FAF9F6" stroke-width="2" opacity="0.6"/>
+    <circle cx="280" cy="150" r="8" fill="url(#goldGrad)"/>
+    
+    <!-- Grand Curved Arch Ceiling -->
+    <path d="M 10 20 Q 150 -30 290 20" fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 10 20 Q 150 -30 290 20" fill="none" stroke="#4F3F84" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Decorative Mandap Drapes -->
+    <path d="M 20 20 Q 40 80 20 150 L 15 150 Z" fill="#FFEAA7" opacity="0.85" />
+    <path d="M 280 20 Q 260 80 280 150 L 285 150 Z" fill="#FFEAA7" opacity="0.85" />
+    
+    <path d="M 20 20 C 80 0 220 0 280 20" fill="none" stroke="#FFEAA7" stroke-width="4" opacity="0.9"/>
+    
+    <!-- Floral/Wisteria Garlands Hanging from Mandap ceiling -->
+    <line x1="100" y1="12" x2="100" y2="60" stroke="#B794F4" stroke-width="1.5" stroke-dasharray="2,5" />
+    <circle cx="100" cy="62" r="3" fill="#B794F4" filter="url(#softGlow)"/>
+    
+    <line x1="150" y1="8" x2="150" y2="70" stroke="#FAF9F6" stroke-width="1.5" stroke-dasharray="2,5" />
+    <circle cx="150" cy="72" r="3.5" fill="#FAF9F6" filter="url(#softGlow)"/>
+    
+    <line x1="200" y1="12" x2="200" y2="60" stroke="#B794F4" stroke-width="1.5" stroke-dasharray="2,5" />
+    <circle cx="200" cy="62" r="3" fill="#B794F4" filter="url(#softGlow)"/>
+
+    <!-- Sacred Fire / Stage Centerpiece -->
+    <polygon points="135,150 165,150 160,135 140,135" fill="url(#goldGrad)" />
+    <!-- Fire fire glow -->
+    <path d="M 142 135 Q 150 115 150 115 Q 150 115 158 135 Z" fill="#EF4444" filter="url(#softGlow)" />
+    <path d="M 146 135 Q 150 122 150 122 Q 150 122 154 135 Z" fill="#F59E0B" filter="url(#softGlow)" />
+  </g>
+
+  <!-- Festoon Party Hanging Lights (Strings overhead) -->
+  <path d="M 0 100 Q 200 160 400 100 Q 600 160 800 100" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+  <circle cx="100" cy="120" r="5" fill="#FFEAA7" filter="url(#softGlow)"/>
+  <circle cx="200" cy="130" r="5" fill="#FFEAA7" filter="url(#softGlow)"/>
+  <circle cx="300" cy="120" r="5" fill="#FFEAA7" filter="url(#softGlow)"/>
+  <circle cx="500" cy="120" r="5" fill="#FFEAA7" filter="url(#softGlow)"/>
+  <circle cx="600" cy="130" r="5" fill="#FFEAA7" filter="url(#softGlow)"/>
+  <circle cx="700" cy="120" r="5" fill="#FFEAA7" filter="url(#softGlow)"/>
+
+  <!-- Floral walkway pots on the grass -->
+  <g transform="translate(80, 360)">
+    <ellipse cx="0" cy="20" rx="20" ry="8" fill="url(#goldGrad)" />
+    <polygon points="-15,20 15,20 10,-5 -10,-5" fill="url(#goldGrad)" />
+    <!-- Red and purple roses vector layout -->
+    <circle cx="-5" cy="-12" r="8" fill="#EF4444"/>
+    <circle cx="5" cy="-10" r="7" fill="#805AD5"/>
+    <circle cx="0" cy="-18" r="6" fill="#B794F4"/>
+  </g>
+  
+  <g transform="translate(720, 360)">
+    <ellipse cx="0" cy="20" rx="20" ry="8" fill="url(#goldGrad)" />
+    <polygon points="-15,20 15,20 10,-5 -10,-5" fill="url(#goldGrad)" />
+    <circle cx="-5" cy="-12" r="8" fill="#EF4444"/>
+    <circle cx="5" cy="-10" r="7" fill="#805AD5"/>
+    <circle cx="0" cy="-18" r="6" fill="#B794F4"/>
+  </g>
+
+  <!-- Venue Name Overlay -->
+  <rect x="230" y="430" width="340" height="40" fill="#0F172A" rx="20" opacity="0.85" stroke="url(#goldGrad)" stroke-width="2" />
+  <text x="400" y="455" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#DFCDA6" font-weight="700" letter-spacing="1" text-anchor="middle">
+    OUTDOOR WEDDING LAWN — 600 GUESTS CAPACITY
+  </text>
+  
+</svg>

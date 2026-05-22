@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#372A62" />
+      <stop offset="100%" stop-color="#1A1235" />
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F2EFE9" />
+      <stop offset="100%" stop-color="#DCD7CD" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DFCDA6" />
+      <stop offset="50%" stop-color="#C5A880" />
+      <stop offset="100%" stop-color="#AC8D60" />
+    </linearGradient>
+    <linearGradient id="stageBack" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4F3F84" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.8" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ceiling & Walls Background -->
+  <rect width="100%" height="340" fill="url(#wallGrad)" />
+  
+  <!-- Polished Marble Floor -->
+  <rect y="340" width="100%" height="160" fill="url(#floorGrad)" />
+  
+  <!-- Reflections on the floor -->
+  <ellipse cx="400" cy="380" rx="300" ry="10" fill="#FFEAA7" opacity="0.15" filter="url(#glow)"/>
+
+  <!-- Classical Columns on Sides (Left) -->
+  <rect x="0" y="40" width="40" height="300" fill="#2D2254" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <rect x="0" y="30" width="45" height="15" fill="url(#goldGrad)"/>
+  
+  <!-- Classical Columns on Sides (Right) -->
+  <rect x="760" y="40" width="40" height="300" fill="#2D2254" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <rect x="755" y="30" width="45" height="15" fill="url(#goldGrad)"/>
+
+  <!-- Indoor Event Stage (Center Background) -->
+  <g id="banquet-stage" transform="translate(180, 100)">
+    <!-- Backdrop Panel -->
+    <rect width="440" height="240" fill="url(#stageBack)" rx="12" stroke="url(#goldGrad)" stroke-width="3" />
+    
+    <!-- Arch behind stage -->
+    <path d="M 40 240 Q 220 50 400 240" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-dasharray="10, 5" opacity="0.6"/>
+
+    <!-- Podium / Elevated Floor -->
+    <rect x="-20" y="225" width="480" height="25" fill="#130C26" rx="4" stroke="url(#goldGrad)" stroke-width="2"/>
+    <rect x="-10" y="215" width="460" height="10" fill="url(#goldGrad)" />
+    
+    <!-- Stage Spotlights Glow -->
+    <polygon points="120,0 60,225 180,225" fill="#FFEAA7" opacity="0.15" filter="url(#glow)"/>
+    <polygon points="320,0 260,225 380,225" fill="#FFEAA7" opacity="0.15" filter="url(#glow)"/>
+    
+    <!-- Decorative Stage Vases -->
+    <rect x="20" y="165" width="20" height="50" fill="url(#goldGrad)" rx="2"/>
+    <circle cx="30" cy="155" r="15" fill="#B794F4" filter="url(#glow)"/>
+    
+    <rect x="400" y="165" width="20" height="50" fill="url(#goldGrad)" rx="2"/>
+    <circle cx="410" cy="155" r="15" fill="#B794F4" filter="url(#glow)"/>
+  </g>
+
+  <!-- Magnificent Golden Chandeliers (Ceiling) -->
+  <!-- Left Chandelier -->
+  <line x1="220" y1="0" x2="220" y2="60" stroke="url(#goldGrad)" stroke-width="2"/>
+  <path d="M 180 60 Q 220 100 260 60" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+  <circle cx="180" cy="60" r="8" fill="#FFEAA7" filter="url(#glow)"/>
+  <circle cx="200" cy="75" r="8" fill="#FFEAA7" filter="url(#glow)"/>
+  <circle cx="220" cy="80" r="10" fill="#FFEAA7" filter="url(#glow)"/>
+  <circle cx="240" cy="75" r="8" fill="#FFEAA7" filter="url(#glow)"/>
+  <circle cx="260" cy="60" r="8" fill="#FFEAA7" filter="url(#glow)"/>
+  
+  <!-- Right Chandelier -->
+  <line x1="580" y1="0" x2="580" y2="60" stroke="url(#goldGrad)" stroke-width="2"/>
+  <path d="M 540 60 Q 580 100 620 60" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+  <circle cx="540" cy="60" r="8" fill="#FFEAA7" filter="url(#glow)"/>
+  <circle cx="560" cy="75" r="8" fill="#FFEAA7" filter="url(#glow)"/>
+  <circle cx="580" cy="80" r="10" fill="#FFEAA7" filter="url(#glow)"/>
+  <circle cx="600" cy="75" r="8" fill="#FFEAA7" filter="url(#glow)"/>
+  <circle cx="620" cy="60" r="8" fill="#FFEAA7" filter="url(#glow)"/>
+
+  <!-- Round Dinner Guest Tables (Foreground) -->
+  <!-- Left Table -->
+  <g id="table-left" transform="translate(160, 400)">
+    <!-- Table base/clothed -->
+    <ellipse cx="0" cy="20" rx="60" ry="12" fill="url(#goldGrad)" />
+    <path d="M -60 20 L 60 20 L 50 70 L -50 70 Z" fill="#FAF9F6" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <ellipse cx="0" cy="20" rx="55" ry="10" fill="#E5E7EB" />
+    
+    <!-- Table centerpiece floral -->
+    <circle cx="0" cy="5" r="8" fill="#4F3F84" filter="url(#glow)"/>
+    
+    <!-- Wine glasses / tableware mini silhouettes -->
+    <line x1="-30" y1="18" x2="-30" y2="8" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <line x1="30" y1="18" x2="30" y2="8" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Right Table -->
+  <g id="table-right" transform="translate(640, 400)">
+    <ellipse cx="0" cy="20" rx="60" ry="12" fill="url(#goldGrad)" />
+    <path d="M -60 20 L 60 20 L 50 70 L -50 70 Z" fill="#FAF9F6" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <ellipse cx="0" cy="20" rx="55" ry="10" fill="#E5E7EB" />
+    <circle cx="0" cy="5" r="8" fill="#4F3F84" filter="url(#glow)"/>
+    <line x1="-30" y1="18" x2="-30" y2="8" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <line x1="30" y1="18" x2="30" y2="8" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Venue Name Overlay -->
+  <rect x="230" y="430" width="340" height="40" fill="#0F172A" rx="20" opacity="0.85" stroke="url(#goldGrad)" stroke-width="2" />
+  <text x="400" y="455" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#DFCDA6" font-weight="700" letter-spacing="1" text-anchor="middle">
+    INDOOR AC BANQUET HALL — 150-200 CAPACITY
+  </text>
+  
+</svg>

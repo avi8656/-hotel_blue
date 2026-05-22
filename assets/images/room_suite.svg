@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D1C3C" />
+      <stop offset="50%" stop-color="#1B1124" />
+      <stop offset="100%" stop-color="#0F0815" />
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B261D" />
+      <stop offset="100%" stop-color="#1A0F0B" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DFCDA6" />
+      <stop offset="50%" stop-color="#C5A880" />
+      <stop offset="100%" stop-color="#AC8D60" />
+    </linearGradient>
+    <linearGradient id="sofaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4F3F84" />
+      <stop offset="100%" stop-color="#2F2354" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Wall Background -->
+  <rect width="100%" height="380" fill="url(#wallGrad)" />
+  
+  <!-- Floor Background -->
+  <rect y="380" width="100%" height="120" fill="url(#floorGrad)" />
+
+  <!-- Luxury Room Divider Panel (Gold Bars, Left) -->
+  <g id="room-divider" transform="translate(480, 0)">
+    <line x1="0" y1="0" x2="0" y2="380" stroke="url(#goldGrad)" stroke-width="4" opacity="0.6"/>
+    <line x1="20" y1="0" x2="20" y2="380" stroke="url(#goldGrad)" stroke-width="4" opacity="0.6"/>
+    <line x1="40" y1="0" x2="40" y2="380" stroke="url(#goldGrad)" stroke-width="4" opacity="0.6"/>
+    <line x1="60" y1="0" x2="60" y2="380" stroke="url(#goldGrad)" stroke-width="4" opacity="0.6"/>
+    
+    <!-- Horizontal links -->
+    <rect x="-10" y="80" width="80" height="15" fill="url(#goldGrad)" opacity="0.8" rx="4"/>
+    <rect x="-10" y="220" width="80" height="15" fill="url(#goldGrad)" opacity="0.8" rx="4"/>
+  </g>
+
+  <!-- King Size Bed Area (Left) -->
+  <!-- Elegant Tall Headboard -->
+  <rect x="50" y="100" width="340" height="180" fill="#1B0F2A" rx="16" stroke="url(#goldGrad)" stroke-width="2.5" />
+  
+  <!-- Headboard ornament -->
+  <circle cx="220" cy="180" r="45" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="220" cy="180" r="30" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Bed Linen -->
+  <rect x="40" y="250" width="360" height="140" fill="#FAF9F6" rx="8" />
+  <rect x="40" y="270" width="360" height="120" fill="#E5E7EB" />
+  
+  <!-- Wisteria Runner -->
+  <rect x="40" y="320" width="360" height="50" fill="#4F3F84" />
+  <line x1="40" y1="320" x2="400" y2="320" stroke="url(#goldGrad)" stroke-width="2" />
+
+  <!-- Pillows -->
+  <rect x="70" y="195" width="120" height="60" fill="#FAF9F6" rx="6" />
+  <rect x="250" y="195" width="120" height="60" fill="#FAF9F6" rx="6" />
+  <rect x="100" y="215" width="80" height="40" fill="#C5A880" rx="4" />
+  <rect x="260" y="215" width="80" height="40" fill="#C5A880" rx="4" />
+
+  <!-- Lounge Sofa Area (Right of Divider) -->
+  <g id="lounge-sofa" transform="translate(560, 240)">
+    <!-- Backrest -->
+    <rect x="0" y="0" width="180" height="80" fill="url(#sofaGrad)" rx="10" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <line x1="90" y1="0" x2="90" y2="80" stroke="#1B0F2A" stroke-width="1.5"/>
+    
+    <!-- Armrests -->
+    <rect x="-15" y="20" width="20" height="70" fill="#2F2354" rx="6" stroke="url(#goldGrad)" stroke-width="1"/>
+    <rect x="175" y="20" width="20" height="70" fill="#2F2354" rx="6" stroke="url(#goldGrad)" stroke-width="1"/>
+    
+    <!-- Cushions -->
+    <rect x="-5" y="45" width="92" height="40" fill="#4F3F84" rx="5" />
+    <rect x="92" y="45" width="92" height="40" fill="#4F3F84" rx="5" />
+    
+    <!-- Sofa Legs -->
+    <line x1="-5" y1="85" x2="-10" y2="105" stroke="url(#goldGrad)" stroke-width="4"/>
+    <line x1="185" y1="85" x2="190" y2="105" stroke="url(#goldGrad)" stroke-width="4"/>
+    
+    <!-- Throw Pillow -->
+    <rect x="15" y="25" width="35" height="35" fill="url(#goldGrad)" rx="4" transform="rotate(15)"/>
+  </g>
+
+  <!-- Luxurious Pendant Chandelier above lounge -->
+  <line x1="660" y1="0" x2="660" y2="100" stroke="url(#goldGrad)" stroke-width="2"/>
+  <rect x="630" y="100" width="60" height="10" fill="url(#goldGrad)" rx="2"/>
+  <circle cx="640" cy="120" r="10" fill="#FFEAA7" filter="url(#glow)"/>
+  <circle cx="660" cy="122" r="12" fill="#FFEAA7" filter="url(#glow)"/>
+  <circle cx="680" cy="120" r="10" fill="#FFEAA7" filter="url(#glow)"/>
+
+  <!-- Room Name Overlay -->
+  <rect x="250" y="430" width="300" height="40" fill="#0F172A" rx="20" opacity="0.8" stroke="url(#goldGrad)" stroke-width="2" />
+  <text x="400" y="455" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#DFCDA6" font-weight="700" letter-spacing="1" text-anchor="middle">
+    SUITE &amp; FAMILY SUITE — ELITE RESORT STAY
+  </text>
+  
+</svg>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="60%" stop-color="#1E1E38" />
+      <stop offset="100%" stop-color="#372A62" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DFCDA6" />
+      <stop offset="50%" stop-color="#C5A880" />
+      <stop offset="100%" stop-color="#AC8D60" />
+    </linearGradient>
+    <linearGradient id="lightGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFEAA7" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#FFEAA7" stop-opacity="0" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="100%" height="100%" fill="url(#skyGrad)" />
+  
+  <!-- Stars -->
+  <circle cx="100" cy="80" r="1.5" fill="#ffffff" opacity="0.5" />
+  <circle cx="250" cy="140" r="1.2" fill="#ffffff" opacity="0.8" />
+  <circle cx="480" cy="90" r="1" fill="#ffffff" opacity="0.4" />
+  <circle cx="650" cy="110" r="1.8" fill="#ffffff" opacity="0.6" />
+  <circle cx="720" cy="70" r="1.2" fill="#ffffff" opacity="0.9" />
+
+  <!-- Moon glow -->
+  <circle cx="700" cy="100" r="40" fill="#ffffff" opacity="0.05" filter="url(#glow)"/>
+  <circle cx="700" cy="100" r="15" fill="#FAF9F6" opacity="0.15"/>
+
+  <!-- Back silhouette hills -->
+  <path d="M 0 520 Q 200 480 400 510 T 800 500 L 800 600 L 0 600 Z" fill="#0A0F1D" />
+
+  <!-- Modern Boutique Hotel Structure -->
+  <g id="hotel-structure" transform="translate(150, 160)">
+    <!-- Main base -->
+    <rect x="50" y="160" width="400" height="200" fill="#131B2E" rx="8" stroke="url(#goldGrad)" stroke-width="2"/>
+    
+    <!-- Central Tower -->
+    <rect x="180" y="60" width="140" height="300" fill="#1E293B" rx="10" stroke="url(#goldGrad)" stroke-width="2"/>
+    
+    <!-- Accent Top Facade -->
+    <polygon points="170,60 330,60 310,30 190,30" fill="url(#goldGrad)" />
+    
+    <!-- Glass Atrium -->
+    <rect x="195" y="75" width="110" height="150" fill="#0F172A" opacity="0.8" rx="6" stroke="#4F3F84" stroke-width="1.5"/>
+    <!-- Glass panelling lines -->
+    <line x1="250" y1="75" x2="250" y2="225" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
+    <line x1="195" y1="125" x2="305" y2="125" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
+    <line x1="195" y1="175" x2="305" y2="175" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
+
+    <!-- Lobby Warm Lights Glow -->
+    <rect x="195" y="240" width="110" height="120" fill="url(#lightGlow)" opacity="0.4" />
+    
+    <!-- Lobby Doors -->
+    <rect x="225" y="290" width="50" height="70" fill="none" stroke="url(#goldGrad)" stroke-width="2" rx="4"/>
+    <line x1="250" y1="290" x2="250" y2="360" stroke="url(#goldGrad)" stroke-width="2"/>
+    <circle cx="244" cy="325" r="2" fill="#FAF9F6"/>
+    <circle cx="256" cy="325" r="2" fill="#FAF9F6"/>
+    
+    <!-- Side wing windows (glowing) -->
+    <!-- Left Wing -->
+    <rect x="80" y="190" width="35" height="50" fill="#FFEAA7" opacity="0.75" rx="3" filter="url(#glow)"/>
+    <rect x="130" y="190" width="35" height="50" fill="#FFEAA7" opacity="0.15" rx="3"/>
+    <rect x="80" y="270" width="35" height="50" fill="#FFEAA7" opacity="0.65" rx="3" filter="url(#glow)"/>
+    <rect x="130" y="270" width="35" height="50" fill="#FFEAA7" opacity="0.8" rx="3" filter="url(#glow)"/>
+    
+    <!-- Right Wing -->
+    <rect x="335" y="190" width="35" height="50" fill="#FFEAA7" opacity="0.8" rx="3" filter="url(#glow)"/>
+    <rect x="385" y="190" width="35" height="50" fill="#FFEAA7" opacity="0.2" rx="3"/>
+    <rect x="335" y="270" width="35" height="50" fill="#FFEAA7" opacity="0.1" rx="3"/>
+    <rect x="385" y="270" width="35" height="50" fill="#FFEAA7" opacity="0.75" rx="3" filter="url(#glow)"/>
+
+    <!-- Balcony details -->
+    <line x1="70" y1="250" x2="170" y2="250" stroke="url(#goldGrad)" stroke-width="2"/>
+    <line x1="330" y1="250" x2="430" y2="250" stroke="url(#goldGrad)" stroke-width="2"/>
+  </g>
+
+  <!-- Ground / Driveway -->
+  <path d="M 0 520 L 800 520 L 800 600 L 0 600 Z" fill="#0D1321" />
+  
+  <!-- Warm landscape lights from ground -->
+  <polygon points="180,520 150,420 210,420" fill="url(#lightGlow)" opacity="0.25"/>
+  <polygon points="620,520 590,420 650,420" fill="url(#lightGlow)" opacity="0.25"/>
+  
+  <!-- Landscaping Trees -->
+  <path d="M 80 520 L 80 430" stroke="#0F172A" stroke-width="6"/>
+  <path d="M 80 430 Q 50 380 80 340 Q 110 380 80 430" fill="#2E4C3E" opacity="0.9" />
+  
+  <path d="M 720 520 L 720 440" stroke="#0F172A" stroke-width="5"/>
+  <path d="M 720 440 Q 695 390 720 350 Q 745 390 720 440" fill="#3D644F" opacity="0.85" />
+  
+  <!-- Glowing Wisteria Vines & Flowers visual overlay -->
+  <path d="M 50 160 Q 100 130 180 180 T 320 150" fill="none" stroke="#4F3F84" stroke-width="2"/>
+  <circle cx="90" cy="150" r="4" fill="#9F7AEA" opacity="0.8" filter="url(#glow)"/>
+  <circle cx="120" cy="145" r="5" fill="#B794F4" opacity="0.9" filter="url(#glow)"/>
+  <circle cx="150" cy="155" r="4" fill="#805AD5" opacity="0.7" filter="url(#glow)"/>
+  <circle cx="220" cy="165" r="5" fill="#9F7AEA" opacity="0.8" filter="url(#glow)"/>
+  <circle cx="270" cy="155" r="4" fill="#B794F4" opacity="0.8" filter="url(#glow)"/>
+
+  <!-- Brand Typography Overlay inside Graphic -->
+  <rect x="250" y="440" width="300" height="50" fill="#0F172A" rx="25" opacity="0.85" stroke="url(#goldGrad)" stroke-width="2.5" />
+  <text x="400" y="471" font-family="'Playfair Display', Georgia, serif" font-size="16" fill="#FAF9F6" font-weight="700" letter-spacing="1.5" text-anchor="middle">
+    HOTEL WISTERIA BLUE
+  </text>
+  
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B2F2F" />
+      <stop offset="100%" stop-color="#1C1414" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DFCDA6" />
+      <stop offset="50%" stop-color="#C5A880" />
+      <stop offset="100%" stop-color="#AC8D60" />
+    </linearGradient>
+    <linearGradient id="pillowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C5A880" />
+      <stop offset="100%" stop-color="#9C7F55" />
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark Rich Wall -->
+  <rect width="100%" height="380" fill="url(#wallGrad)" />
+  
+  <!-- Wooden Floor -->
+  <rect y="380" width="100%" height="120" fill="url(#floorGrad)" />
+  
+  <!-- Luxury Wall Panel Mouldings -->
+  <rect x="50" y="40" width="160" height="200" fill="none" stroke="rgba(197, 168, 128, 0.25)" stroke-width="2"/>
+  <rect x="60" y="50" width="140" height="180" fill="none" stroke="rgba(197, 168, 128, 0.15)" stroke-width="1"/>
+  
+  <rect x="590" y="40" width="160" height="200" fill="none" stroke="rgba(197, 168, 128, 0.25)" stroke-width="2"/>
+  <rect x="600" y="50" width="140" height="180" fill="none" stroke="rgba(197, 168, 128, 0.15)" stroke-width="1"/>
+
+  <rect x="250" y="30" width="300" height="100" fill="none" stroke="rgba(197, 168, 128, 0.3)" stroke-width="2"/>
+
+  <!-- Golden Modern Pendant Lamp from Ceiling -->
+  <line x1="130" y1="0" x2="130" y2="130" stroke="url(#goldGrad)" stroke-width="2" />
+  <circle cx="130" cy="130" r="14" fill="url(#goldGrad)" />
+  <circle cx="130" cy="130" r="8" fill="#FFEAA7" filter="url(#softGlow)" />
+  <polygon points="130,130 90,240 170,240" fill="#FFEAA7" opacity="0.2" filter="url(#softGlow)"/>
+
+  <!-- Bed Headboard (Sleek Modern Velvet) -->
+  <rect x="220" y="150" width="360" height="120" fill="#2E1C44" rx="12" stroke="url(#goldGrad)" stroke-width="2" />
+  
+  <!-- Vertical Channel Tufting Detail -->
+  <path d="M 220 150 Q 300 170 300 270" fill="none" stroke="#1F132E" stroke-width="2" />
+  <path d="M 220 150 Q 400 170 400 270" fill="none" stroke="#1F132E" stroke-width="2" />
+  <path d="M 220 150 Q 500 170 500 270" fill="none" stroke="#1F132E" stroke-width="2" />
+
+  <!-- Pillows -->
+  <rect x="250" y="215" width="120" height="60" fill="#FAF9F6" rx="8" />
+  <rect x="430" y="215" width="120" height="60" fill="#FAF9F6" rx="8" />
+  
+  <!-- Golden accent cushions -->
+  <rect x="280" y="235" width="70" height="40" fill="url(#pillowGrad)" rx="6" />
+  <rect x="450" y="235" width="70" height="40" fill="url(#pillowGrad)" rx="6" />
+
+  <!-- Bed Base and Covers -->
+  <rect x="210" y="270" width="380" height="120" fill="#FAF9F6" rx="8" />
+  <rect x="210" y="285" width="380" height="105" fill="#E5E7EB" />
+  
+  <!-- Velvet Throw Coverlet (Royal Purple Wisteria Accent) -->
+  <rect x="210" y="330" width="380" height="50" fill="#4F3F84" />
+  <line x1="210" y1="330" x2="590" y2="330" stroke="url(#goldGrad)" stroke-width="2.5" />
+  
+  <!-- Styled Armchair on side -->
+  <path d="M 60 410 Q 50 350 80 340 T 110 410 Z" fill="#4F3F84" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <rect x="70" y="375" width="30" height="10" fill="url(#goldGrad)" rx="2" />
+
+  <!-- Room Name Overlay -->
+  <rect x="280" y="430" width="240" height="40" fill="#0F172A" rx="20" opacity="0.8" stroke="url(#goldGrad)" stroke-width="2" />
+  <text x="400" y="455" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#DFCDA6" font-weight="700" letter-spacing="1" text-anchor="middle">
+    ROYALE ROOM — STYLE &amp; COMFORT
+  </text>
+</svg>

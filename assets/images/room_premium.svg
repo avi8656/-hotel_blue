@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E1C2E" />
+      <stop offset="100%" stop-color="#0F0E17" />
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3D291F" />
+      <stop offset="100%" stop-color="#1F1510" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DFCDA6" />
+      <stop offset="50%" stop-color="#C5A880" />
+      <stop offset="100%" stop-color="#AC8D60" />
+    </linearGradient>
+    <linearGradient id="windowLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFEAA7" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#FFEAA7" stop-opacity="0.0" />
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark Premium Walls -->
+  <rect width="100%" height="380" fill="url(#wallGrad)" />
+  
+  <!-- Wood Flooring -->
+  <rect y="380" width="100%" height="120" fill="url(#floorGrad)" />
+  
+  <!-- Premium Window with elegant drapes -->
+  <g id="window-drapes" transform="translate(600, 20)">
+    <rect width="140" height="280" fill="#0A090F" rx="4" />
+    <!-- Window Panes -->
+    <rect x="10" y="10" width="55" height="120" fill="#2E204E" opacity="0.3" />
+    <rect x="75" y="10" width="55" height="120" fill="#2E204E" opacity="0.3" />
+    <rect x="10" y="140" width="55" height="120" fill="#2E204E" opacity="0.3" />
+    <rect x="75" y="140" width="55" height="120" fill="#2E204E" opacity="0.3" />
+    
+    <!-- Light beam coming from window -->
+    <polygon points="0,0 -400,380 0,380" fill="url(#windowLight)" />
+    
+    <!-- Curtains/Drapes -->
+    <path d="M 0 0 Q 30 140 10 280 L 0 280 Z" fill="#4F3F84" opacity="0.9" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <path d="M 140 0 Q 110 140 130 280 L 140 280 Z" fill="#4F3F84" opacity="0.9" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Large Premium Tufted Headboard -->
+  <rect x="180" y="120" width="380" height="150" fill="#3A1C4E" rx="14" stroke="url(#goldGrad)" stroke-width="3" />
+  
+  <!-- Criss-cross Tufting Design -->
+  <line x1="180" y1="120" x2="560" y2="270" stroke="rgba(197, 168, 128, 0.15)" stroke-width="2" />
+  <line x1="180" y1="270" x2="560" y2="120" stroke="rgba(197, 168, 128, 0.15)" stroke-width="2" />
+  <line x1="280" y1="120" x2="460" y2="270" stroke="rgba(197, 168, 128, 0.15)" stroke-width="1.5" />
+  <line x1="460" y1="120" x2="280" y2="270" stroke="rgba(197, 168, 128, 0.15)" stroke-width="1.5" />
+
+  <!-- Premium Pillows array -->
+  <rect x="210" y="185" width="140" height="65" fill="#FAF9F6" rx="8" />
+  <rect x="390" y="185" width="140" height="65" fill="#FAF9F6" rx="8" />
+  
+  <!-- Secondary pillows overlay -->
+  <rect x="230" y="200" width="100" height="50" fill="#E5E7EB" rx="6" />
+  <rect x="410" y="200" width="100" height="50" fill="#E5E7EB" rx="6" />
+  
+  <!-- Accent cushions -->
+  <rect x="255" y="215" width="50" height="35" fill="#4F3F84" rx="4" />
+  <rect x="435" y="215" width="50" height="35" fill="#4F3F84" rx="4" />
+
+  <!-- Luxury Bed Mattress & Sheets -->
+  <rect x="170" y="250" width="400" height="140" fill="#FAF9F6" rx="10" stroke="url(#goldGrad)" stroke-width="1" />
+  <rect x="170" y="270" width="400" height="120" fill="#E5E7EB" />
+  
+  <!-- Gold Embroidered Blanket/Comforter -->
+  <rect x="170" y="310" width="400" height="75" fill="#4F3F84" />
+  <!-- Pattern on comforter -->
+  <line x1="170" y1="310" x2="570" y2="310" stroke="url(#goldGrad)" stroke-width="3" />
+  <path d="M 170 330 Q 370 360 570 330" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7" />
+  <path d="M 170 350 Q 370 380 570 350" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7" />
+
+  <!-- Floating Wall sconce light -->
+  <circle cx="100" cy="120" r="10" fill="url(#goldGrad)" />
+  <circle cx="100" cy="120" r="5" fill="#FFEAA7" filter="url(#softGlow)" />
+  <path d="M 100 120 C 100 180 120 180 120 220" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" />
+  <!-- Glow cone -->
+  <polygon points="100,120 60,30 140,30" fill="#FFEAA7" opacity="0.25" filter="url(#softGlow)" />
+
+  <!-- Room Name Overlay -->
+  <rect x="280" y="430" width="240" height="40" fill="#0F172A" rx="20" opacity="0.8" stroke="url(#goldGrad)" stroke-width="2" />
+  <text x="400" y="455" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#DFCDA6" font-weight="700" letter-spacing="1" text-anchor="middle">
+    PREMIUM ROOM — SUPERIOR LUXURY
+  </text>
+  
+</svg>
