@@ -396,3 +396,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start auto testimonial rotation
     startSlideShow();
 });
+
+function openAmenities(){
+
+document.getElementById("amenityPopup").style.display="flex";
+
+document.body.style.overflow="hidden";
+
+}
+
+
+
+function closeAmenities(){
+
+document.getElementById("amenityPopup").style.display="none";
+
+document.body.style.overflow="auto";
+
+}
+
