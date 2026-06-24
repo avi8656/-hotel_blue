@@ -384,6 +384,8 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-bg-white);
     text-align: center;
     overflow: hidden;
+    flex-direction: column;
+    padding-top: 5%;
 }
 
 .hero-bg {
