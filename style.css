@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Immersive Cinematic Parallax Hero Section --- */
 .hero {
     position: relative;
-    height: calc(140vh - var(--header-height));
+    height: calc(100vh - var(--header-height));
     min-height: 650px;
     display: flex;
     align-items: center;
@@ -384,8 +384,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-bg-white);
     text-align: center;
     overflow: hidden;
-   /* flex-direction: column;
-    padding-top: 5%;*/
 }
 
 .hero-bg {
@@ -414,7 +412,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
     max-width: 950px;
     padding: 0 20px;
-    margin-top: -60px; /* Offset for floating booking bar */
+    margin-top: -60px; /* Offset for floating booking bar — overridden on mobile */
 }
 
 .hero-tagline {
@@ -1956,8 +1954,8 @@ h1, h2, h3, h4, h5, h6 {
         position: relative;
         bottom: 0;
         transform: none;
-        margin-top: 40px;
-        margin-bottom: -40px;
+        margin-top: 30px;
+        margin-bottom: 0;
         padding: 0;
     }
     
@@ -1973,6 +1971,66 @@ h1, h2, h3, h4, h5, h6 {
     
     .welcome-section {
         padding-top: 80px;
+    }
+
+    /* ---------- MOBILE HERO FIX ----------
+     * The sticky header (90px) sits above the hero. On mobile the
+     * hero height is auto (column layout) so we must:
+     *  1. Remove the desktop negative margin-top on .hero-content
+     *     that was only needed to offset the floating booking bar.
+     *  2. Add enough padding so the tagline/title are never clipped.
+     *  3. Give the hero a min-height that fills the visible screen.
+     * --------------------------------------- */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100svh; /* small viewport units — better on iOS safari */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: calc(var(--header-height) + 20px); /* clear sticky header */
+        padding-bottom: 60px;
+        overflow: visible;
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .hero-content {
+        margin-top: 0;         /* cancel desktop -60px offset */
+        padding: 0 24px;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-tagline {
+        font-size: 10px;
+        letter-spacing: 0.28em;
+        margin-bottom: 18px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .hero-scroll-indicator {
+        display: none; /* hide scroll hint — no room on short mobile screens */
     }
     
     .room-details {
@@ -2068,16 +2126,18 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 20px;
+        padding: 0 16px;
     }
 
+    /* Hero: slightly tighter padding on smallest screens */
     .hero {
-       flex-direction: column;
-       padding-top: 5%;
+        padding-top: calc(var(--header-height) + 10px);
+        padding-bottom: 50px;
     }
-    
+
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
+        line-height: 1.15;
     }
     
     .section-title {
@@ -2226,15 +2286,61 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Small smartphone visual scaling adjustments */
+/* 390px (iPhone 14 / Pixel 6a) – hero title fine-tune */
 @media (max-width: 390px) {
+    .hero {
+        padding-top: calc(var(--header-height) + 8px);
+        padding-bottom: 44px;
+    }
     .hero-title {
-        font-size: 2.1rem;
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    .hero-subtitle {
+        font-size: 10px;
+        letter-spacing: 0.1em;
     }
     .section-title {
         font-size: 1.8rem;
     }
     .booking-bar {
         padding: 16px;
+    }
+}
+
+/* 360px (smallest common Android phones) */
+@media (max-width: 360px) {
+    .hero {
+        padding-top: calc(var(--header-height) + 4px);
+        padding-bottom: 40px;
+    }
+    .hero-tagline {
+        font-size: 9px;
+        letter-spacing: 0.22em;
+        margin-bottom: 14px;
+    }
+    .hero-title {
+        font-size: 1.85rem;
+        line-height: 1.2;
+        margin-bottom: 18px;
+    }
+    .hero-subtitle {
+        font-size: 9.5px;
+        letter-spacing: 0.08em;
+        margin-bottom: 28px;
+    }
+    .hero-actions .btn {
+        padding: 14px 28px;
+        font-size: 10px;
+    }
+    .section-title {
+        font-size: 1.65rem;
+    }
+    .booking-bar {
+        padding: 14px;
+        grid-template-columns: 1fr;
+    }
+    .booking-btn {
+        grid-column: span 1;
     }
 }
