@@ -2311,7 +2311,7 @@ h1, h2, h3, h4, h5, h6 {
 /* 360px (smallest common Android phones) */
 @media (max-width: 360px) {
     .hero {
-        padding-top: calc(var(--header-height) + 4px);
+        padding-top: 40px;  /*calc(var(--header-height) + 4px);*/
         padding-bottom: 40px;
     }
     .hero-tagline {
