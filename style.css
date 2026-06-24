@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Immersive Cinematic Parallax Hero Section --- */
 .hero {
     position: relative;
-    height: calc(120vh - var(--header-height));
+    height: calc(140vh - var(--header-height));
     min-height: 650px;
     display: flex;
     align-items: center;
