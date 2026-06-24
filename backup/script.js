@@ -45,24 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function toggleMobileMenu() {
         const isOpen = navMenu.classList.toggle('open');
         navOverlay.classList.toggle('open', isOpen);
-        
-        // Prevent background body scrolling when menu is open
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-
         // Toggle mobile icon between bars and close X
         const toggleIcon = mobileToggle.querySelector('i');
-        if (toggleIcon) {
-            if (isOpen) {
-                toggleIcon.classList.remove('fa-bars');
-                toggleIcon.classList.add('fa-xmark');
-            } else {
-                toggleIcon.classList.remove('fa-xmark');
-                toggleIcon.classList.add('fa-bars');
-            }
+        if (isOpen) {
+            toggleIcon.classList.remove('fa-bars');
+            toggleIcon.classList.add('fa-xmark');
+        } else {
+            toggleIcon.classList.remove('fa-xmark');
+            toggleIcon.classList.add('fa-bars');
         }
     }
 
@@ -189,26 +179,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle Escape Keypress for Accessibility
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            if (modal && modal.classList.contains('open')) {
-                closeModal();
-            }
-            const amenityPopup = document.getElementById('amenityPopup');
-            if (amenityPopup && amenityPopup.style.display === 'flex') {
-                closeAmenities();
-            }
+        if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
+            closeModal();
         }
     });
-
-    // Close amenities popup on clicking backdrop overlay
-    const amenityPopup = document.getElementById('amenityPopup');
-    if (amenityPopup) {
-        amenityPopup.addEventListener('click', (e) => {
-            if (e.target === amenityPopup) {
-                closeAmenities();
-            }
-        });
-    }
 
     // --- Stay Planner Availability Bar Form Submission ---
     const stayPlannerForm = document.getElementById('stay-planner-form');
@@ -333,13 +307,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const parallaxBg = document.getElementById('hero-parallax-bg');
     if (parallaxBg) {
         window.addEventListener('scroll', () => {
-            // Only translate background image vertically on desktop (screens larger than 1024px wide)
-            if (window.innerWidth > 1024) {
-                const scrollY = window.pageYOffset;
-                parallaxBg.style.transform = `translate3d(0, ${scrollY * 0.35}px, 0)`;
-            } else {
-                parallaxBg.style.transform = 'none';
-            }
+            const scrollY = window.pageYOffset;
+            // Translate background image vertically at 35% speed
+            parallaxBg.style.transform = `translate3d(0, ${scrollY * 0.35}px, 0)`;
         });
     }
 
@@ -371,19 +341,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Guest Reflections Testimonial Slider ---
-    const reviewsSlider = document.querySelector('.reviews-slider');
     const reviewCards = document.querySelectorAll('.review-card');
     const dots = document.querySelectorAll('.review-dots .dot');
     let currentSlide = 0;
     let slideInterval;
-
-    function adjustReviewsHeight() {
-        if (!reviewsSlider) return;
-        const activeCard = reviewsSlider.querySelector('.review-card.active');
-        if (activeCard) {
-            reviewsSlider.style.height = `${activeCard.offsetHeight}px`;
-        }
-    }
 
     function showSlide(index) {
         if (reviewCards.length === 0) return;
@@ -410,15 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 dot.classList.remove('active');
             }
         });
-
-        // Update container height dynamically to prevent clipping or empty space
-        adjustReviewsHeight();
     }
-
-    // Adapt slider height dynamically when layout shifts
-    window.addEventListener('resize', adjustReviewsHeight);
-    window.addEventListener('load', () => setTimeout(adjustReviewsHeight, 300));
-    setTimeout(adjustReviewsHeight, 300); // Call initially to prevent flat height
 
     function startSlideShow() {
         if (reviewCards.length <= 1) return;

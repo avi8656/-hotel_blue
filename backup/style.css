@@ -41,7 +41,6 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--header-height);
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden; /* Prevent horizontal viewport scrollbars */
 }
 
 body {
@@ -1208,10 +1207,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .reviews-slider {
     position: relative;
-    height: auto; /* Height will be set dynamically via JS to prevent text cut-off */
-    min-height: 150px;
+    height: 250px;
     overflow: hidden;
-    transition: height 0.4s ease;
 }
 
 .review-card {
@@ -1749,19 +1746,19 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(17, 16, 14, 0.55);
     backdrop-filter: blur(8px);
     z-index: 998;
+    display: none;
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
+    transition: opacity 0.4s ease;
 }
 
 .nav-overlay.open {
+    display: block;
     opacity: 1;
-    visibility: visible;
 }
 
 /* --- Scroll-triggered Animations --- */
@@ -1877,9 +1874,9 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .top-bar {
-        display: none; /* Hide top utility bar on tablet/mobile to save vertical viewport */
+        display: none; /* Hide top utility bar on mobile to save vertical viewport */
     }
     
     .mobile-toggle {
@@ -1899,16 +1896,12 @@ h1, h2, h3, h4, h5, h6 {
         justify-content: flex-start;
         padding: 100px 40px 40px 40px;
         z-index: 999;
-        transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s;
+        transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         gap: 15px;
-        overflow-y: auto;
-        max-height: 100vh;
-        visibility: hidden; /* Avoid mobile horizontal layout stretching when closed */
     }
     
     .nav-menu.open {
         right: 0;
-        visibility: visible;
     }
     
     .nav-link {
@@ -1928,9 +1921,7 @@ h1, h2, h3, h4, h5, h6 {
         margin-left: 0;
         width: 100%;
     }
-}
-
-@media (max-width: 768px) {
+    
     /* Responsive scales */
     .hero-title {
         font-size: 3rem;
@@ -1998,7 +1989,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .reviews-slider {
-        height: auto;
+        height: 380px;
     }
     
     .review-text {
@@ -2024,11 +2015,10 @@ h1, h2, h3, h4, h5, h6 {
     
     .mobile-sticky-actions {
         display: flex;
-        padding-bottom: env(safe-area-inset-bottom);
     }
     
     body {
-        padding-bottom: calc(56px + env(safe-area-inset-bottom)); /* Sticky floating CTA bar clearance + safe area */
+        padding-bottom: 56px; /* Sticky floating CTA bar clearance */
     }
     
     .footer-grid {
@@ -2078,7 +2068,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .reviews-slider {
-        height: auto;
+        height: 440px;
     }
     
     .review-text {
@@ -2097,137 +2087,133 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-/* VIEW MORE AMENITIES BUTTON */
-.more-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 35px;
-    padding: 14px 30px;
-    background: transparent;
-    border: 1px solid var(--color-accent-dark);
-    color: var(--color-accent-dark);
-    font-family: var(--font-sans);
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    cursor: pointer;
-    transition: var(--transition-premium);
+.amenities-section{
+    font-family: Arial, sans-serif;
+    padding:20px;
 }
 
-.more-btn:hover {
-    background-color: var(--color-accent-dark);
-    color: var(--color-bg-light);
+.amenities-title{
+    font-size:38px;
+    font-family:serif;
+    margin-bottom:35px;
+    color:#222;
 }
 
-/* POPUP MODAL FOR ALL AMENITIES */
-.amenity-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(17, 16, 14, 0.65);
-    backdrop-filter: blur(10px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1050;
+.amenities-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:45px 35px;
 }
 
-.popup-box {
-    background-color: var(--color-bg-white);
-    border: 1px solid var(--color-accent);
-    padding: 50px 40px;
-    width: 90%;
-    max-width: 800px;
-    position: relative;
-    box-shadow: 0 30px 90px rgba(17, 16, 14, 0.25);
-    max-height: 90vh;
-    overflow-y: auto;
+.amenity-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-size:18px;
+    color:#555;
 }
 
-.close-popup {
-    position: absolute;
-    right: 25px;
-    top: 20px;
-    font-size: 28px;
-    line-height: 1;
-    color: var(--color-text-light);
-    cursor: pointer;
-    transition: var(--transition-premium);
-    background: none;
-    border: none;
-    padding: 0;
+.amenity-icon{
+    font-size:35px;
+    color:#a96b12;
 }
 
-.close-popup:hover {
-    color: var(--color-primary);
+
+.more-btn{
+    margin-top:35px;
+    padding:13px 35px;
+    background:white;
+    border:2px solid #a96b12;
+    color:#a96b12;
+    cursor:pointer;
+    font-size:16px;
 }
 
-.popup-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px 24px;
-    margin-top: 30px;
+
+
+/* POPUP */
+
+.amenity-popup{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.65);
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
 }
 
-.popup-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-size: 13.5px;
-    color: var(--color-primary);
-    font-weight: 500;
+
+.popup-box{
+
+    background:white;
+
+    width:75%;
+    padding:55px;
+
+    position:relative;
+
 }
 
-.popup-item .amenity-icon i {
-    font-size: 16px;
-    color: var(--color-accent-dark);
-    width: 20px;
-    text-align: center;
+
+.close-popup{
+
+    position:absolute;
+
+    right:25px;
+    top:15px;
+
+    font-size:35px;
+    cursor:pointer;
+
 }
 
-/* Responsive layout adjustments for popup and amenities */
-@media (max-width: 768px) {
-    .popup-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    .popup-box {
-        padding: 40px 24px;
-        width: 92%;
-    }
+
+
+.popup-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:45px 35px;
+
 }
 
-@media (max-width: 480px) {
-    .popup-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
+
+.popup-item{
+
+    display:flex;
+
+    gap:15px;
+
+    font-size:18px;
+
+    color:#555;
+
 }
 
-/* Intermediate size desktop header layout fix */
-@media (min-width: 993px) and (max-width: 1150px) {
-    .nav-menu {
-        gap: 20px;
-    }
-    .nav-cta {
-        margin-left: 0;
-        padding: 12px 18px;
-    }
+
+@media(max-width:768px){
+
+.amenities-grid,
+.popup-grid{
+
+grid-template-columns:1fr;
+
 }
 
-/* Small smartphone visual scaling adjustments */
-@media (max-width: 390px) {
-    .hero-title {
-        font-size: 2.1rem;
-    }
-    .section-title {
-        font-size: 1.8rem;
-    }
-    .booking-bar {
-        padding: 16px;
-    }
+.popup-box{
+
+width:90%;
+
+}
+
 }
