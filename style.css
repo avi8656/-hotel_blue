@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Immersive Cinematic Parallax Hero Section --- */
 .hero {
     position: relative;
-    height: calc(100vh - var(--header-height));
+    height: calc(110vh - var(--header-height));
     min-height: 650px;
     display: flex;
     align-items: center;
@@ -384,8 +384,8 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-bg-white);
     text-align: center;
     overflow: hidden;
-    flex-direction: column;
-    padding-top: 5%;
+   /* flex-direction: column;
+    padding-top: 5%;*/
 }
 
 .hero-bg {
@@ -2069,6 +2069,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 480px) {
     .container {
         padding: 0 20px;
+    }
+
+    .hero {
+       flex-direction: column;
+       padding-top: 5%;
     }
     
     .hero-title {
