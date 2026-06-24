@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeModal();
             }
             const amenityPopup = document.getElementById('amenityPopup');
-            if (amenityPopup && amenityPopup.classList.contains('open')) {
+            if (amenityPopup && amenityPopup.style.display === 'flex') {
                 closeAmenities();
             }
         }
@@ -445,18 +445,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function openAmenities(){
-    const amenityPopup = document.getElementById("amenityPopup");
-    if (amenityPopup) {
-        amenityPopup.classList.add("open");
-        document.body.style.overflow = "hidden";
-    }
+
+document.getElementById("amenityPopup").style.display="flex";
+
+document.body.style.overflow="hidden";
+
 }
 
+
+
 function closeAmenities(){
-    const amenityPopup = document.getElementById("amenityPopup");
-    if (amenityPopup) {
-        amenityPopup.classList.remove("open");
-        document.body.style.overflow = "auto";
-    }
+
+document.getElementById("amenityPopup").style.display="none";
+
+document.body.style.overflow="auto";
+
 }
 

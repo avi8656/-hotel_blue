@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Arch columns and curved top -->
+  <path d="M100 420V240c0-80 70-150 156-150s156 70 156 150v180" fill="none" stroke="#915711" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Column bases -->
+  <line x1="70" y1="420" x2="130" y2="420" stroke="#915711" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+  <line x1="382" y1="420" x2="442" y2="420" stroke="#915711" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Horizontal supporting bars in the arch -->
+  <path d="M100 240h312" fill="none" stroke="#915711" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Hanging decorative leaves/flowers in Maroon -->
+  <circle cx="256" cy="180" r="18" fill="none" stroke="#760e19" stroke-width="16" />
+  <path d="M256 120v42M230 146h52" stroke="#760e19" stroke-width="16" stroke-linecap="round" />
+  <path d="M160 200c10-10 25-10 35 0M317 200c10-10 25-10 35 0" stroke="#760e19" stroke-width="16" stroke-linecap="round" />
+</svg>

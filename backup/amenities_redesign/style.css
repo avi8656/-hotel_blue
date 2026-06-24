@@ -294,22 +294,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Sophisticated Premium Typography Brand Logo */
 .logo {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    max-height: 100%;
-}
-
-.logo img {
-    display: block;
-    height: auto;
-    max-height: 105px;
-    width: auto;
-    object-fit: contain;
-    transition: var(--transition-premium);
-}
-
-.header.scrolled .logo img {
-    max-height: 95px;
+    flex-direction: column;
+    line-height: 1;
 }
 
 .logo-sub {
@@ -615,135 +601,40 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 24px;
 }
 
-/* Premium Welcome Amenities Redesign */
-.welcome-amenities {
+/* Redesigned Minimalist Highlights Bar (Replaces Cheesy Icon Cards) */
+.welcome-highlights {
     border-left: 1px solid rgba(197, 168, 128, 0.3);
     padding-left: 40px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    min-width: 0; /* prevent grid blowout */
-    width: 100%;
+    gap: 36px;
 }
 
-.welcome-amenities-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px 20px;
-    width: 100%;
-    margin-top: 28px;
-}
-
-.welcome-amenity-item {
+.highlight-card {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    min-width: 0; /* allow label to shrink */
+    flex-direction: column;
+    gap: 8px;
 }
 
-.welcome-amenity-item .amenity-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
+.highlight-num {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    color: var(--color-accent-dark);
+    font-style: italic;
 }
 
-.welcome-amenity-item .amenity-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.welcome-amenity-item .amenity-label {
-    font-family: var(--font-sans);
-    font-size: 10.5px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.07rem;
+.highlight-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 400;
     color: var(--color-primary);
-    line-height: 1.35;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    min-width: 0;
+    margin-bottom: 6px;
 }
 
-/* Welcome amenities section-title sizing within the column */
-.welcome-amenities .section-title {
-    font-size: 2rem;
-}
-
-@media (max-width: 1200px) {
-    .welcome-amenities-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px 16px;
-    }
-    .welcome-amenity-item .amenity-label {
-        font-size: 10px;
-        letter-spacing: 0.05rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    /* Single-column layout: grid can afford 3 columns across full width */
-    .welcome-amenities-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 28px 20px;
-    }
-    .welcome-amenity-item .amenity-label {
-        font-size: 11px;
-        letter-spacing: 0.08rem;
-    }
-    .welcome-amenities .section-title {
-        font-size: 2.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .welcome-amenities-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px 16px;
-    }
-    .welcome-amenities .more-btn {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .welcome-amenities-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px 12px;
-    }
-    .welcome-amenity-item .amenity-icon {
-        width: 30px;
-        height: 30px;
-    }
-    .welcome-amenity-item .amenity-label {
-        font-size: 10px;
-        letter-spacing: 0.04rem;
-    }
-    .welcome-amenities .more-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 14px 20px;
-    }
-}
-
-@media (max-width: 390px) {
-    .welcome-amenities-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px 10px;
-    }
-    .welcome-amenity-item .amenity-icon {
-        width: 28px;
-        height: 28px;
-    }
-    .welcome-amenity-item .amenity-label {
-        font-size: 9.5px;
-        letter-spacing: 0.03rem;
-    }
+.highlight-info p {
+    font-size: 13.5px;
+    color: var(--color-text-light);
+    line-height: 1.6;
 }
 
 /* --- Spacious Minimal Trust Section --- */
@@ -1055,23 +946,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .amenities-title {
     font-size: 1.8rem;
-    text-align: left;
-    margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 45px;
     font-weight: 300;
     color: var(--color-primary);
-    padding-right: 40px; /* clear the absolute close button */
-}
-
-.popup-subtitle {
-    font-size: 13.5px;
-    color: var(--color-text-light);
-    margin-top: 10px;
-    margin-bottom: 0;
-    line-height: 1.5;
-}
-
-.popup-box .title-divider-left {
-    margin: 16px 0 20px 0;
 }
 
 .amenities-grid {
@@ -1908,7 +1786,6 @@ h1, h2, h3, h4, h5, h6 {
     .booking-bar {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 15px;
-        padding-bottom: 60px;
     }
     
     .booking-btn {
@@ -1941,7 +1818,7 @@ h1, h2, h3, h4, h5, h6 {
         gap: 60px;
     }
     
-    .welcome-amenities {
+    .welcome-highlights {
         border-left: none;
         border-top: 1px solid rgba(197, 168, 128, 0.3);
         padding-left: 0;
@@ -2055,13 +1932,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
-    .logo img {
-        max-height: 85px;
-    }
-    .header.scrolled .logo img {
-        max-height: 75px;
-    }
-
     /* Responsive scales */
     .hero-title {
         font-size: 3rem;
@@ -2256,13 +2126,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
-    .logo img {
-        max-height: 85px;
-    }
-    .header.scrolled .logo img {
-        max-height: 80px;
-    }
-
     .container {
         padding: 0 16px;
     }
@@ -2335,18 +2198,10 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     background-color: rgba(17, 16, 14, 0.65);
     backdrop-filter: blur(10px);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1050;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.amenity-popup.open {
-    opacity: 1;
-    visibility: visible;
 }
 
 .popup-box {
@@ -2359,12 +2214,6 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 30px 90px rgba(17, 16, 14, 0.25);
     max-height: 90vh;
     overflow-y: auto;
-    transform: translateY(30px);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.amenity-popup.open .popup-box {
-    transform: translateY(0);
 }
 
 .close-popup {
@@ -2388,8 +2237,8 @@ h1, h2, h3, h4, h5, h6 {
 .popup-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px 24px;
-    margin-top: 32px;
+    gap: 30px 24px;
+    margin-top: 30px;
 }
 
 .popup-item {
@@ -2401,98 +2250,29 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
 }
 
-.popup-item .amenity-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
-}
-
-.popup-item .amenity-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.popup-item .amenity-icon i {
+    font-size: 16px;
+    color: var(--color-accent-dark);
+    width: 20px;
+    text-align: center;
 }
 
 /* Responsive layout adjustments for popup and amenities */
 @media (max-width: 768px) {
     .popup-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px 16px;
+        gap: 20px;
     }
     .popup-box {
-        padding: 44px 28px 36px;
+        padding: 40px 24px;
         width: 92%;
-        max-height: 88vh;
-    }
-    .popup-item {
-        gap: 12px;
-        font-size: 13px;
-    }
-    .popup-item .amenity-icon {
-        width: 28px;
-        height: 28px;
     }
 }
 
 @media (max-width: 480px) {
     .popup-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px 12px;
-    }
-    .popup-box {
-        padding: 40px 20px 28px;
-        width: 94%;
-        max-height: 85vh;
-    }
-    .popup-item {
-        gap: 10px;
-        font-size: 12px;
-    }
-    .popup-item .amenity-icon {
-        width: 26px;
-        height: 26px;
-    }
-    .amenities-title {
-        font-size: 1.2rem;
-    }
-    .popup-subtitle {
-        font-size: 11px;
-        margin-top: 6px;
-    }
-}
-
-@media (max-width: 390px) {
-    .popup-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px 10px;
-    }
-    .popup-box {
-        padding: 36px 16px 24px;
-        width: 96%;
-        max-height: 82vh;
-    }
-    .popup-item {
-        gap: 8px;
-        font-size: 11.5px;
-    }
-    .popup-item .amenity-icon {
-        width: 24px;
-        height: 24px;
-    }
-    .amenities-title {
-        font-size: 1.1rem;
-    }
-    .popup-subtitle {
-        font-size: 10px;
-        margin-top: 4px;
-    }
-    .close-popup {
-        right: 16px;
-        top: 14px;
-        font-size: 24px;
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 }
 

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Crest Outer Ring (Gold) -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#915711" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Letter P (Gold) -->
+  <line x1="220" y1="140" x2="220" y2="370" stroke="#915711" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M220 140h60c40 0 60 20 60 55s-20 55-60 55h-60" fill="none" stroke="#915711" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Leaf Details (Maroon) -->
+  <path d="M130 330c-15-15-15-35 0-50 15 15 15 35 0 50z" fill="#760e19" />
+  <path d="M382 330c15-15 15-35 0-50-15 15-15 35 0 50z" fill="#760e19" />
+  <path d="M350 110l6 12 12 6-12 6-6 12-6-12-12-6 12-6z" fill="#760e19" />
+</svg>

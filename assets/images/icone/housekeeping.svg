@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Broom Handle (Gold) -->
+  <line x1="380" y1="120" x2="220" y2="280" stroke="#915711" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Broom Head (Gold) -->
+  <path d="M220 280l-60 60c-15 15-5 40 15 40h60c20 0 30-25 15-40z" fill="none" stroke="#915711" stroke-width="22" stroke-linejoin="round" stroke-linecap="round" />
+  
+  <!-- Bristle Detail Lines (Gold) -->
+  <line x1="200" y1="300" x2="160" y2="360" stroke="#915711" stroke-width="14" stroke-linecap="round" />
+  <line x1="215" y1="315" x2="195" y2="375" stroke="#915711" stroke-width="14" stroke-linecap="round" />
+  <line x1="230" y1="330" x2="230" y2="380" stroke="#915711" stroke-width="14" stroke-linecap="round" />
+  
+  <!-- Sparkles (Maroon) -->
+  <path d="M340 220l6 12 12 6-12 6-6 12-6-12-12-6 12-6z" fill="#760e19" />
+  <path d="M130 180l6 12 12 6-12 6-6 12-6-12-12-6 12-6z" fill="#760e19" />
+  <path d="M260 100l4 8 8 4-8 4-4 8-4-8-8-4 8-4z" fill="#760e19" />
+</svg>
