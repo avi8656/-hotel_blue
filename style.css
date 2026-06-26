@@ -2114,8 +2114,8 @@ h1, h2, h3, h4, h5, h6 {
      * --------------------------------------- */
     .hero {
         height: auto;
-        min-height: 100vh;
-        min-height: 100svh; /* small viewport units — better on iOS safari */
+        /* min-height: 100vh; */
+        /* min-height: 100svh; small viewport units — better on iOS safari */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -2564,4 +2564,8 @@ h1, h2, h3, h4, h5, h6 {
     .booking-btn {
         grid-column: span 1;
     }
+}
+
+.booking-bar-wrapper {
+    display: none !important;
 }
